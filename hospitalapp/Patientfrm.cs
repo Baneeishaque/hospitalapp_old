@@ -185,5 +185,10 @@ namespace hospitalapp
             this.Dispose();
         }
 
+        private void btnCustomprint_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

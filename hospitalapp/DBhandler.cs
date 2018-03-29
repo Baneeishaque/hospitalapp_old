@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using hospitalapp;
 /// <summary>
 /// Summary description for DBhandler
 /// </summary>
@@ -12,11 +13,10 @@ public class DBhandler
 
     DataTable dt;
     SqlDataAdapter da;
-    String datasource = @"Data Source=.\SQLEXPRESS;AttachDbFilename=D:\data\hospitalapp\hospitalapp\hospitaldata.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
 
     public DBhandler()
     {
-        con = new SqlConnection(datasource);
+        con = new SqlConnection(DB_Constants.db_url);
     }
 
     public DataTable GetTable(String str)

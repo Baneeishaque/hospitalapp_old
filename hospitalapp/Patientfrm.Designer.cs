@@ -124,6 +124,7 @@
             this.btnCustomprint.TabIndex = 19;
             this.btnCustomprint.Text = "List";
             this.btnCustomprint.UseVisualStyleBackColor = false;
+            this.btnCustomprint.Click += new System.EventHandler(this.btnCustomprint_Click);
             // 
             // GrpBox_PatiInfo
             // 

@@ -108,12 +108,6 @@
     <Compile Include="Billfrm.Designer.cs">
       <DependentUpon>Billfrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CheckBox.Designer.cs">
-      <DependentUpon>CheckBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="DBhandler.cs" />
     <Compile Include="DB_Constants.cs" />
     <Compile Include="Dischargefrm.cs">
@@ -127,6 +121,12 @@
     </Compile>
     <Compile Include="Doctorfrm.Designer.cs">
       <DependentUpon>Doctorfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print_Contents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print_Contents.Designer.cs">
+      <DependentUpon>Print_Contents.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInsertIntoCare.cs">
       <SubType>UserControl</SubType>
@@ -168,16 +168,16 @@
       <DependentUpon>Billfrm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="CheckBox.resx">
-      <DependentUpon>CheckBox.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dischargefrm.resx">
       <DependentUpon>Dischargefrm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctorfrm.resx">
       <DependentUpon>Doctorfrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print_Contents.resx">
+      <DependentUpon>Print_Contents.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInsertIntoCare.resx">

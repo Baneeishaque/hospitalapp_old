@@ -94,7 +94,9 @@ namespace hospitalapp
 
         private void btnCustomprint_Click(object sender, EventArgs e)
         {
-            printDocument1.Print();
+            //printDocument1.Print();
+            Print_Contents cb = new Print_Contents("op");
+            cb.Show();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

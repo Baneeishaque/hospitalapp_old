@@ -1,13 +1,13 @@
 ﻿namespace hospitalapp
 {
-    partial class CheckBox
+    partial class Print_Contents
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -32,7 +32,7 @@
             this.frmcheck_DG = new System.Windows.Forms.DataGrid();
             this.btnSelectall = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.clbforcolumn = new System.Windows.Forms.CheckedListBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.frmcheck_DG)).BeginInit();
             this.SuspendLayout();
@@ -40,10 +40,10 @@
             // GroupBox1
             // 
             this.GroupBox1.Controls.Add(this.frmcheck_DG);
-            this.GroupBox1.Location = new System.Drawing.Point(11, 269);
+            this.GroupBox1.Location = new System.Drawing.Point(3, 250);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(608, 264);
-            this.GroupBox1.TabIndex = 9;
+            this.GroupBox1.TabIndex = 13;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "View";
             // 
@@ -60,10 +60,10 @@
             // 
             this.btnSelectall.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnSelectall.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSelectall.Location = new System.Drawing.Point(331, 69);
+            this.btnSelectall.Location = new System.Drawing.Point(323, 50);
             this.btnSelectall.Name = "btnSelectall";
             this.btnSelectall.Size = new System.Drawing.Size(104, 32);
-            this.btnSelectall.TabIndex = 8;
+            this.btnSelectall.TabIndex = 12;
             this.btnSelectall.Text = "Select All";
             // 
             // btnPrint
@@ -71,31 +71,35 @@
             this.btnPrint.Enabled = false;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnPrint.Location = new System.Drawing.Point(331, 117);
+            this.btnPrint.Location = new System.Drawing.Point(323, 98);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(104, 32);
-            this.btnPrint.TabIndex = 7;
+            this.btnPrint.TabIndex = 11;
             this.btnPrint.Text = "Print";
             // 
-            // clbforcolumn
+            // listView1
             // 
-            this.clbforcolumn.CheckOnClick = true;
-            this.clbforcolumn.Location = new System.Drawing.Point(19, 29);
-            this.clbforcolumn.Name = "clbforcolumn";
-            this.clbforcolumn.Size = new System.Drawing.Size(160, 214);
-            this.clbforcolumn.TabIndex = 6;
+            this.listView1.CheckBoxes = true;
+            this.listView1.Location = new System.Drawing.Point(23, 33);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(257, 191);
+            this.listView1.TabIndex = 14;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // CheckBox
+            // Print_Contents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(614, 524);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.btnSelectall);
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.clbforcolumn);
-            this.Name = "CheckBox";
-            this.Size = new System.Drawing.Size(630, 562);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Print_Contents";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Print Contents";
             this.GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.frmcheck_DG)).EndInit();
             this.ResumeLayout(false);
@@ -108,6 +112,6 @@
         internal System.Windows.Forms.DataGrid frmcheck_DG;
         internal System.Windows.Forms.Button btnSelectall;
         internal System.Windows.Forms.Button btnPrint;
-        internal System.Windows.Forms.CheckedListBox clbforcolumn;
+        private System.Windows.Forms.ListView listView1;
     }
 }
