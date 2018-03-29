@@ -36,11 +36,11 @@
             this.SBP4_Time = new System.Windows.Forms.StatusBarPanel();
             this.SBP5_Showtime = new System.Windows.Forms.StatusBarPanel();
             this.pnlShowlist = new System.Windows.Forms.Panel();
-            this.btnEmail = new System.Windows.Forms.Button();
             this.btnNotepad = new System.Windows.Forms.Button();
             this.btnCalculator = new System.Windows.Forms.Button();
             this.Label1 = new System.Windows.Forms.Label();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnBill = new System.Windows.Forms.Button();
             this.btnDischargePatient = new System.Windows.Forms.Button();
@@ -107,24 +107,13 @@
             // pnlShowlist
             // 
             this.pnlShowlist.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlShowlist.Controls.Add(this.btnEmail);
             this.pnlShowlist.Controls.Add(this.btnNotepad);
             this.pnlShowlist.Controls.Add(this.btnCalculator);
             this.pnlShowlist.Controls.Add(this.Label1);
-            this.pnlShowlist.Location = new System.Drawing.Point(8, 420);
+            this.pnlShowlist.Location = new System.Drawing.Point(8, 466);
             this.pnlShowlist.Name = "pnlShowlist";
-            this.pnlShowlist.Size = new System.Drawing.Size(152, 208);
+            this.pnlShowlist.Size = new System.Drawing.Size(152, 162);
             this.pnlShowlist.TabIndex = 8;
-            // 
-            // btnEmail
-            // 
-            this.btnEmail.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmail.Location = new System.Drawing.Point(24, 160);
-            this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Size = new System.Drawing.Size(104, 32);
-            this.btnEmail.TabIndex = 10;
-            this.btnEmail.Text = "Email";
             // 
             // btnNotepad
             // 
@@ -134,6 +123,7 @@
             this.btnNotepad.Size = new System.Drawing.Size(104, 32);
             this.btnNotepad.TabIndex = 9;
             this.btnNotepad.Text = "Notepad";
+            this.btnNotepad.Click += new System.EventHandler(this.btnNotepad_Click);
             // 
             // btnCalculator
             // 
@@ -144,6 +134,7 @@
             this.btnCalculator.Size = new System.Drawing.Size(104, 32);
             this.btnCalculator.TabIndex = 8;
             this.btnCalculator.Text = "Calculator";
+            this.btnCalculator.Click += new System.EventHandler(this.btnCalculator_Click);
             // 
             // Label1
             // 
@@ -159,6 +150,7 @@
             // pnlContent
             // 
             this.pnlContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlContent.Controls.Add(this.button2);
             this.pnlContent.Controls.Add(this.button1);
             this.pnlContent.Controls.Add(this.btnBill);
             this.pnlContent.Controls.Add(this.btnDischargePatient);
@@ -169,14 +161,25 @@
             this.pnlContent.Controls.Add(this.lblDetails);
             this.pnlContent.Location = new System.Drawing.Point(8, 4);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(152, 410);
+            this.pnlContent.Size = new System.Drawing.Size(152, 456);
             this.pnlContent.TabIndex = 7;
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(18, 405);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(104, 32);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Bed Status";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(21, 337);
+            this.button1.Location = new System.Drawing.Point(18, 352);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 32);
             this.button1.TabIndex = 8;
@@ -185,7 +188,7 @@
             // btnBill
             // 
             this.btnBill.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnBill.Location = new System.Drawing.Point(21, 286);
+            this.btnBill.Location = new System.Drawing.Point(18, 301);
             this.btnBill.Name = "btnBill";
             this.btnBill.Size = new System.Drawing.Size(104, 32);
             this.btnBill.TabIndex = 6;
@@ -195,7 +198,7 @@
             // btnDischargePatient
             // 
             this.btnDischargePatient.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnDischargePatient.Location = new System.Drawing.Point(21, 234);
+            this.btnDischargePatient.Location = new System.Drawing.Point(18, 249);
             this.btnDischargePatient.Name = "btnDischargePatient";
             this.btnDischargePatient.Size = new System.Drawing.Size(104, 32);
             this.btnDischargePatient.TabIndex = 5;
@@ -205,17 +208,17 @@
             // btnAddsisboy
             // 
             this.btnAddsisboy.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnAddsisboy.Location = new System.Drawing.Point(21, 182);
+            this.btnAddsisboy.Location = new System.Drawing.Point(18, 197);
             this.btnAddsisboy.Name = "btnAddsisboy";
             this.btnAddsisboy.Size = new System.Drawing.Size(104, 32);
             this.btnAddsisboy.TabIndex = 4;
-            this.btnAddsisboy.Text = "Add Sister/Wardboy";
+            this.btnAddsisboy.Text = "Add Nurse/Wardboy";
             this.btnAddsisboy.Click += new System.EventHandler(this.btnAddsisboy_Click);
             // 
             // btnAddDoctor
             // 
             this.btnAddDoctor.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnAddDoctor.Location = new System.Drawing.Point(21, 127);
+            this.btnAddDoctor.Location = new System.Drawing.Point(18, 142);
             this.btnAddDoctor.Name = "btnAddDoctor";
             this.btnAddDoctor.Size = new System.Drawing.Size(104, 32);
             this.btnAddDoctor.TabIndex = 3;
@@ -225,7 +228,7 @@
             // btnAdmitpatient
             // 
             this.btnAdmitpatient.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnAdmitpatient.Location = new System.Drawing.Point(21, 79);
+            this.btnAdmitpatient.Location = new System.Drawing.Point(18, 94);
             this.btnAdmitpatient.Name = "btnAdmitpatient";
             this.btnAdmitpatient.Size = new System.Drawing.Size(104, 32);
             this.btnAdmitpatient.TabIndex = 2;
@@ -236,7 +239,7 @@
             // 
             this.btnRoutineCheckup.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnRoutineCheckup.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRoutineCheckup.Location = new System.Drawing.Point(21, 31);
+            this.btnRoutineCheckup.Location = new System.Drawing.Point(18, 46);
             this.btnRoutineCheckup.Name = "btnRoutineCheckup";
             this.btnRoutineCheckup.Size = new System.Drawing.Size(104, 32);
             this.btnRoutineCheckup.TabIndex = 1;
@@ -247,7 +250,7 @@
             // 
             this.lblDetails.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblDetails.ForeColor = System.Drawing.Color.Blue;
-            this.lblDetails.Location = new System.Drawing.Point(13, -9);
+            this.lblDetails.Location = new System.Drawing.Point(8, 11);
             this.lblDetails.Name = "lblDetails";
             this.lblDetails.Size = new System.Drawing.Size(120, 32);
             this.lblDetails.TabIndex = 7;
@@ -274,6 +277,7 @@
             this.Controls.Add(this.pnlMain);
             this.Name = "mainfrm";
             this.Text = "mainfrm";
+            this.Load += new System.EventHandler(this.mainfrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SBP1_Status)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SBP2_Today)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SBP3_Date)).EndInit();
@@ -294,7 +298,6 @@
         internal System.Windows.Forms.StatusBarPanel SBP4_Time;
         internal System.Windows.Forms.StatusBarPanel SBP5_Showtime;
         internal System.Windows.Forms.Panel pnlShowlist;
-        internal System.Windows.Forms.Button btnEmail;
         internal System.Windows.Forms.Button btnNotepad;
         internal System.Windows.Forms.Button btnCalculator;
         internal System.Windows.Forms.Label Label1;
@@ -308,6 +311,7 @@
         internal System.Windows.Forms.Label lblDetails;
         internal System.Windows.Forms.Panel pnlMain;
         internal System.Windows.Forms.Button button1;
+        internal System.Windows.Forms.Button button2;
 
     }
 }

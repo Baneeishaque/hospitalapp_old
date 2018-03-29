@@ -20,13 +20,13 @@ namespace hospitalapp
             btnDeleteRegistration.Enabled = false;
             btnCancelRegistration.Enabled = false;
             btnSaveRegistration.Enabled = false;
-            btnAdmit.Enabled = false;
+           
 
             txtRegno.Text = db.get_max_reg_op();
 
             cbDoctor.DataSource = db.GetTable("SELECT ID AS Expr1, Name AS Expr2 FROM Doctor");
             cbDoctor.DisplayMember = "Expr2";
-            cbDoctor.ValueMember = "Expr1";
+            cbDoctor.ValueMember = "Expr2";
 
             dataGridView1.DataSource = db.GetTable("SELECT Reg As [Reg. No.], name As Name, Age, Address, Phone, Doctor FROM op");
 
@@ -195,7 +195,7 @@ namespace hospitalapp
                 btnEditRegistration.Enabled = true;
                 btnRegisterPatient.Enabled = false;
                 btnSaveRegistration.Enabled = false;
-                btnAdmit.Enabled = true;
+                
             }
         }
 
@@ -204,14 +204,17 @@ namespace hospitalapp
             db.Ins_Up_Del("DELETE FROM op WHERE Reg=" + txtRegno.Text);
             MessageBox.Show("Deletion Success...");
             dataGridView1.DataSource = db.GetTable("SELECT Reg As [Reg. No.], name As Name, Age, Address, Phone, Doctor FROM op");
+            this.Dispose();
         }
 
         private void btnEditRegistration_Click(object sender, EventArgs e)
         {
-            db.Ins_Up_Del("UPDATE op SET name ='" + txtPatiname.Text + "', Age ='" + txtAge.Text + "', Address ='" + RtxtAddress.Text + "', Phone ='" + txtphone.Text + "', Date ='" + DTP_date.Value + "', Time ='" + DTP_time.Value + "', Disease ='" + txtDisease.Text + "', Bloodgroup ='" + CB_Bloodgp.SelectedItem.ToString() + "', Doctor ='" + cbDoctor.SelectedItem.ToString() + "', Remarks ='" +Rtxt_Remark.Text + "'  WHERE Reg=" + txtRegno.Text);
+            db.Ins_Up_Del("UPDATE op SET name ='" + txtPatiname.Text + "', Age ='" + txtAge.Text + "', Address ='" + RtxtAddress.Text + "', Phone ='" + txtphone.Text + "', Date ='" + DTP_date.Value + "', Time ='" + DTP_time.Value + "', Disease ='" + txtDisease.Text + "', Bloodgroup ='" + CB_Bloodgp.SelectedItem.ToString() + "', Doctor ='" + cbDoctor.SelectedValue + "', Remarks ='" +Rtxt_Remark.Text + "'  WHERE Reg=" + txtRegno.Text);
             MessageBox.Show("Updation Success...");
             dataGridView1.DataSource = db.GetTable("SELECT Reg As [Reg. No.], name As Name, Age, Address, Phone, Doctor FROM op");
-        } 
-       
+            this.Dispose();
+        }
+
+        
     }
 }

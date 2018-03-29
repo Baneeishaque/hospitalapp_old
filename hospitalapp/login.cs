@@ -11,9 +11,11 @@ namespace hospitalapp
 {
     public partial class login : Form
     {
+        int counter = 3;
         public login()
         {
             InitializeComponent();
+            SB_Login.Text = "Ateempt : " + counter;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -31,13 +33,19 @@ namespace hospitalapp
             }
             else
             {
-                MessageBox.Show("piese check you usename and password");
+                MessageBox.Show("Please check your credentials");
+                counter--;
+                SB_Login.Text = "Ateempt : " + counter;
+                if (counter == 0)
+                {
+                    btnOK.Enabled = false;
+                }
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
     }
 }

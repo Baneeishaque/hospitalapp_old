@@ -108,6 +108,12 @@
     <Compile Include="Billfrm.Designer.cs">
       <DependentUpon>Billfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CheckBox.Designer.cs">
+      <DependentUpon>CheckBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBhandler.cs" />
     <Compile Include="DB_Constants.cs" />
     <Compile Include="Dischargefrm.cs">
@@ -121,6 +127,12 @@
     </Compile>
     <Compile Include="Doctorfrm.Designer.cs">
       <DependentUpon>Doctorfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsertIntoCare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmInsertIntoCare.Designer.cs">
+      <DependentUpon>frmInsertIntoCare.cs</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -156,12 +168,20 @@
       <DependentUpon>Billfrm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="CheckBox.resx">
+      <DependentUpon>CheckBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dischargefrm.resx">
       <DependentUpon>Dischargefrm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctorfrm.resx">
       <DependentUpon>Doctorfrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertIntoCare.resx">
+      <DependentUpon>frmInsertIntoCare.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
@@ -185,6 +205,18 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Record Print.resx">
+      <DependentUpon>Record Print.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendMail.resx">
+      <DependentUpon>SendMail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="serchfrm.resx">
+      <DependentUpon>serchfrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SisterWardboyfrm.resx">
       <DependentUpon>SisterWardboyfrm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -202,6 +234,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Record Print.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Record Print.Designer.cs">
+      <DependentUpon>Record Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SendMail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SendMail.Designer.cs">
+      <DependentUpon>SendMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="serchfrm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="serchfrm.Designer.cs">
+      <DependentUpon>serchfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="SisterWardboyfrm.cs">
       <SubType>UserControl</SubType>

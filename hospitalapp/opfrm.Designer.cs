@@ -41,7 +41,6 @@
             this.btnSaveRegistration = new System.Windows.Forms.Button();
             this.btnEditRegistration = new System.Windows.Forms.Button();
             this.btnCancelRegistration = new System.Windows.Forms.Button();
-            this.btnAdmit = new System.Windows.Forms.Button();
             this.Label10 = new System.Windows.Forms.Label();
             this.Label9 = new System.Windows.Forms.Label();
             this.cbDoctor = new System.Windows.Forms.ComboBox();
@@ -165,7 +164,6 @@
             this.GroupBox3.Controls.Add(this.btnSaveRegistration);
             this.GroupBox3.Controls.Add(this.btnEditRegistration);
             this.GroupBox3.Controls.Add(this.btnCancelRegistration);
-            this.GroupBox3.Controls.Add(this.btnAdmit);
             this.GroupBox3.Location = new System.Drawing.Point(304, 32);
             this.GroupBox3.Name = "GroupBox3";
             this.GroupBox3.Size = new System.Drawing.Size(176, 328);
@@ -222,15 +220,6 @@
             this.btnCancelRegistration.TabIndex = 15;
             this.btnCancelRegistration.Text = "Cancel  Registration";
             this.btnCancelRegistration.Click += new System.EventHandler(this.btnCancelRegistration_Click);
-            // 
-            // btnAdmit
-            // 
-            this.btnAdmit.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnAdmit.Location = new System.Drawing.Point(32, 280);
-            this.btnAdmit.Name = "btnAdmit";
-            this.btnAdmit.Size = new System.Drawing.Size(112, 32);
-            this.btnAdmit.TabIndex = 71;
-            this.btnAdmit.Text = "Admit";
             // 
             // Label10
             // 
@@ -480,7 +469,6 @@
         internal System.Windows.Forms.Button btnSaveRegistration;
         internal System.Windows.Forms.Button btnEditRegistration;
         internal System.Windows.Forms.Button btnCancelRegistration;
-        internal System.Windows.Forms.Button btnAdmit;
         internal System.Windows.Forms.Label Label10;
         internal System.Windows.Forms.Label Label9;
         internal System.Windows.Forms.ComboBox cbDoctor;

@@ -1,6 +1,6 @@
 ﻿namespace hospitalapp
 {
-    partial class Patientfrm
+    partial class frmInsertIntoCare
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,25 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnExcel = new System.Windows.Forms.Button();
-            this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCustomprint = new System.Windows.Forms.Button();
-            this.GrpBox_PatiInfo = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Rtxt_Remark = new System.Windows.Forms.TextBox();
             this.RtxtAddress = new System.Windows.Forms.TextBox();
             this.GroupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSaveRegistration = new System.Windows.Forms.Button();
             this.btnCancelRegistration = new System.Windows.Forms.Button();
-            this.btnEditRegistration = new System.Windows.Forms.Button();
-            this.btnRegisterPatient = new System.Windows.Forms.Button();
             this.Label13 = new System.Windows.Forms.Label();
             this.txtBedCharge = new System.Windows.Forms.TextBox();
             this.DTP_date = new System.Windows.Forms.DateTimePicker();
             this.Label10 = new System.Windows.Forms.Label();
             this.Label9 = new System.Windows.Forms.Label();
+            this.GrpBox_PatiInfo = new System.Windows.Forms.GroupBox();
+            this.cbDoctor = new System.Windows.Forms.ComboBox();
             this.Label8 = new System.Windows.Forms.Label();
             this.Label7 = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
@@ -66,112 +59,11 @@
             this.CB_BedCategory = new System.Windows.Forms.ComboBox();
             this.CB_Bedno = new System.Windows.Forms.ComboBox();
             this.GB_PatientView = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.GroupBox2.SuspendLayout();
-            this.GroupBox1.SuspendLayout();
-            this.GrpBox_PatiInfo.SuspendLayout();
+            this.LV_PatiView = new System.Windows.Forms.ListView();
             this.GroupBox3.SuspendLayout();
+            this.GrpBox_PatiInfo.SuspendLayout();
             this.GB_PatientView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // GroupBox2
-            // 
-            this.GroupBox2.Controls.Add(this.btnSearch);
-            this.GroupBox2.Controls.Add(this.btnExcel);
-            this.GroupBox2.Location = new System.Drawing.Point(544, 248);
-            this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(136, 128);
-            this.GroupBox2.TabIndex = 12;
-            this.GroupBox2.TabStop = false;
-            this.GroupBox2.Text = "Search/Export";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnSearch.Location = new System.Drawing.Point(32, 32);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 32);
-            this.btnSearch.TabIndex = 20;
-            this.btnSearch.Text = "Search";
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnExcel.Location = new System.Drawing.Point(32, 80);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(75, 32);
-            this.btnExcel.TabIndex = 21;
-            this.btnExcel.Text = "Excel";
-            // 
-            // GroupBox1
-            // 
-            this.GroupBox1.Controls.Add(this.btnCustomprint);
-            this.GroupBox1.Location = new System.Drawing.Point(544, 48);
-            this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(136, 104);
-            this.GroupBox1.TabIndex = 11;
-            this.GroupBox1.TabStop = false;
-            this.GroupBox1.Text = "Print";
-            // 
-            // btnCustomprint
-            // 
-            this.btnCustomprint.BackColor = System.Drawing.Color.LightGray;
-            this.btnCustomprint.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCustomprint.Location = new System.Drawing.Point(32, 40);
-            this.btnCustomprint.Name = "btnCustomprint";
-            this.btnCustomprint.Size = new System.Drawing.Size(72, 32);
-            this.btnCustomprint.TabIndex = 19;
-            this.btnCustomprint.Text = "List";
-            this.btnCustomprint.UseVisualStyleBackColor = false;
-            // 
-            // GrpBox_PatiInfo
-            // 
-            this.GrpBox_PatiInfo.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.GrpBox_PatiInfo.Controls.Add(this.comboBox1);
-            this.GrpBox_PatiInfo.Controls.Add(this.Rtxt_Remark);
-            this.GrpBox_PatiInfo.Controls.Add(this.RtxtAddress);
-            this.GrpBox_PatiInfo.Controls.Add(this.GroupBox3);
-            this.GrpBox_PatiInfo.Controls.Add(this.Label13);
-            this.GrpBox_PatiInfo.Controls.Add(this.txtBedCharge);
-            this.GrpBox_PatiInfo.Controls.Add(this.DTP_date);
-            this.GrpBox_PatiInfo.Controls.Add(this.Label10);
-            this.GrpBox_PatiInfo.Controls.Add(this.Label9);
-            this.GrpBox_PatiInfo.Controls.Add(this.Label8);
-            this.GrpBox_PatiInfo.Controls.Add(this.Label7);
-            this.GrpBox_PatiInfo.Controls.Add(this.Label6);
-            this.GrpBox_PatiInfo.Controls.Add(this.Label5);
-            this.GrpBox_PatiInfo.Controls.Add(this.Label4);
-            this.GrpBox_PatiInfo.Controls.Add(this.Label3);
-            this.GrpBox_PatiInfo.Controls.Add(this.Label2);
-            this.GrpBox_PatiInfo.Controls.Add(this.Label1);
-            this.GrpBox_PatiInfo.Controls.Add(this.txtDisease);
-            this.GrpBox_PatiInfo.Controls.Add(this.txtphone);
-            this.GrpBox_PatiInfo.Controls.Add(this.txtAge);
-            this.GrpBox_PatiInfo.Controls.Add(this.txtPatiname);
-            this.GrpBox_PatiInfo.Controls.Add(this.txtRegno);
-            this.GrpBox_PatiInfo.Controls.Add(this.CB_Bloodgp);
-            this.GrpBox_PatiInfo.Controls.Add(this.Label11);
-            this.GrpBox_PatiInfo.Controls.Add(this.Label12);
-            this.GrpBox_PatiInfo.Controls.Add(this.CB_BedCategory);
-            this.GrpBox_PatiInfo.Controls.Add(this.CB_Bedno);
-            this.GrpBox_PatiInfo.Location = new System.Drawing.Point(16, 8);
-            this.GrpBox_PatiInfo.Name = "GrpBox_PatiInfo";
-            this.GrpBox_PatiInfo.Size = new System.Drawing.Size(516, 492);
-            this.GrpBox_PatiInfo.TabIndex = 9;
-            this.GrpBox_PatiInfo.TabStop = false;
-            this.GrpBox_PatiInfo.Text = "Patient Detail";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Suni",
-            "gg"});
-            this.comboBox1.Location = new System.Drawing.Point(144, 400);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(104, 21);
-            this.comboBox1.TabIndex = 70;
             // 
             // Rtxt_Remark
             // 
@@ -179,7 +71,7 @@
             this.Rtxt_Remark.Multiline = true;
             this.Rtxt_Remark.Name = "Rtxt_Remark";
             this.Rtxt_Remark.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.Rtxt_Remark.Size = new System.Drawing.Size(104, 40);
+            this.Rtxt_Remark.Size = new System.Drawing.Size(100, 40);
             this.Rtxt_Remark.TabIndex = 12;
             // 
             // RtxtAddress
@@ -195,11 +87,9 @@
             // 
             this.GroupBox3.Controls.Add(this.btnSaveRegistration);
             this.GroupBox3.Controls.Add(this.btnCancelRegistration);
-            this.GroupBox3.Controls.Add(this.btnEditRegistration);
-            this.GroupBox3.Controls.Add(this.btnRegisterPatient);
             this.GroupBox3.Location = new System.Drawing.Point(320, 40);
             this.GroupBox3.Name = "GroupBox3";
-            this.GroupBox3.Size = new System.Drawing.Size(176, 280);
+            this.GroupBox3.Size = new System.Drawing.Size(176, 144);
             this.GroupBox3.TabIndex = 69;
             this.GroupBox3.TabStop = false;
             this.GroupBox3.Text = "Transaction";
@@ -207,41 +97,20 @@
             // btnSaveRegistration
             // 
             this.btnSaveRegistration.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnSaveRegistration.Location = new System.Drawing.Point(32, 128);
+            this.btnSaveRegistration.Location = new System.Drawing.Point(32, 40);
             this.btnSaveRegistration.Name = "btnSaveRegistration";
             this.btnSaveRegistration.Size = new System.Drawing.Size(112, 32);
             this.btnSaveRegistration.TabIndex = 16;
             this.btnSaveRegistration.Text = "Save  Registration";
-            this.btnSaveRegistration.Click += new System.EventHandler(this.btnSaveRegistration_Click);
             // 
             // btnCancelRegistration
             // 
             this.btnCancelRegistration.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCancelRegistration.Location = new System.Drawing.Point(32, 176);
+            this.btnCancelRegistration.Location = new System.Drawing.Point(32, 88);
             this.btnCancelRegistration.Name = "btnCancelRegistration";
             this.btnCancelRegistration.Size = new System.Drawing.Size(112, 32);
             this.btnCancelRegistration.TabIndex = 17;
             this.btnCancelRegistration.Text = "Cancel  Registration";
-            // 
-            // btnEditRegistration
-            // 
-            this.btnEditRegistration.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnEditRegistration.Location = new System.Drawing.Point(32, 80);
-            this.btnEditRegistration.Name = "btnEditRegistration";
-            this.btnEditRegistration.Size = new System.Drawing.Size(112, 32);
-            this.btnEditRegistration.TabIndex = 14;
-            this.btnEditRegistration.Text = "Edit Registration";
-            this.btnEditRegistration.Click += new System.EventHandler(this.btnEditRegistration_Click);
-            // 
-            // btnRegisterPatient
-            // 
-            this.btnRegisterPatient.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnRegisterPatient.Location = new System.Drawing.Point(32, 24);
-            this.btnRegisterPatient.Name = "btnRegisterPatient";
-            this.btnRegisterPatient.Size = new System.Drawing.Size(112, 32);
-            this.btnRegisterPatient.TabIndex = 13;
-            this.btnRegisterPatient.Text = "Register Patient";
-            this.btnRegisterPatient.Click += new System.EventHandler(this.btnRegisterPatient_Click);
             // 
             // Label13
             // 
@@ -282,6 +151,50 @@
             this.Label9.Size = new System.Drawing.Size(100, 23);
             this.Label9.TabIndex = 58;
             this.Label9.Text = "Blood Group";
+            // 
+            // GrpBox_PatiInfo
+            // 
+            this.GrpBox_PatiInfo.Controls.Add(this.Rtxt_Remark);
+            this.GrpBox_PatiInfo.Controls.Add(this.RtxtAddress);
+            this.GrpBox_PatiInfo.Controls.Add(this.GroupBox3);
+            this.GrpBox_PatiInfo.Controls.Add(this.Label13);
+            this.GrpBox_PatiInfo.Controls.Add(this.txtBedCharge);
+            this.GrpBox_PatiInfo.Controls.Add(this.DTP_date);
+            this.GrpBox_PatiInfo.Controls.Add(this.Label10);
+            this.GrpBox_PatiInfo.Controls.Add(this.Label9);
+            this.GrpBox_PatiInfo.Controls.Add(this.cbDoctor);
+            this.GrpBox_PatiInfo.Controls.Add(this.Label8);
+            this.GrpBox_PatiInfo.Controls.Add(this.Label7);
+            this.GrpBox_PatiInfo.Controls.Add(this.Label6);
+            this.GrpBox_PatiInfo.Controls.Add(this.Label5);
+            this.GrpBox_PatiInfo.Controls.Add(this.Label4);
+            this.GrpBox_PatiInfo.Controls.Add(this.Label3);
+            this.GrpBox_PatiInfo.Controls.Add(this.Label2);
+            this.GrpBox_PatiInfo.Controls.Add(this.Label1);
+            this.GrpBox_PatiInfo.Controls.Add(this.txtDisease);
+            this.GrpBox_PatiInfo.Controls.Add(this.txtphone);
+            this.GrpBox_PatiInfo.Controls.Add(this.txtAge);
+            this.GrpBox_PatiInfo.Controls.Add(this.txtPatiname);
+            this.GrpBox_PatiInfo.Controls.Add(this.txtRegno);
+            this.GrpBox_PatiInfo.Controls.Add(this.CB_Bloodgp);
+            this.GrpBox_PatiInfo.Controls.Add(this.Label11);
+            this.GrpBox_PatiInfo.Controls.Add(this.Label12);
+            this.GrpBox_PatiInfo.Controls.Add(this.CB_BedCategory);
+            this.GrpBox_PatiInfo.Controls.Add(this.CB_Bedno);
+            this.GrpBox_PatiInfo.Location = new System.Drawing.Point(19, 22);
+            this.GrpBox_PatiInfo.Name = "GrpBox_PatiInfo";
+            this.GrpBox_PatiInfo.Size = new System.Drawing.Size(512, 480);
+            this.GrpBox_PatiInfo.TabIndex = 6;
+            this.GrpBox_PatiInfo.TabStop = false;
+            this.GrpBox_PatiInfo.Text = "Patient Detail";
+            // 
+            // cbDoctor
+            // 
+            this.cbDoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDoctor.Location = new System.Drawing.Point(144, 400);
+            this.cbDoctor.Name = "cbDoctor";
+            this.cbDoctor.Size = new System.Drawing.Size(104, 21);
+            this.cbDoctor.TabIndex = 11;
             // 
             // Label8
             // 
@@ -425,10 +338,10 @@
             this.CB_BedCategory.Name = "CB_BedCategory";
             this.CB_BedCategory.Size = new System.Drawing.Size(104, 21);
             this.CB_BedCategory.TabIndex = 1;
-            this.CB_BedCategory.SelectedIndexChanged += new System.EventHandler(this.CB_BedCategory_SelectedIndexChanged);
             // 
             // CB_Bedno
             // 
+            this.CB_Bedno.Enabled = false;
             this.CB_Bedno.Location = new System.Drawing.Point(144, 96);
             this.CB_Bedno.Name = "CB_Bedno";
             this.CB_Bedno.Size = new System.Drawing.Size(104, 21);
@@ -436,73 +349,56 @@
             // 
             // GB_PatientView
             // 
-            this.GB_PatientView.Controls.Add(this.dataGridView1);
-            this.GB_PatientView.Location = new System.Drawing.Point(16, 506);
+            this.GB_PatientView.Controls.Add(this.LV_PatiView);
+            this.GB_PatientView.Location = new System.Drawing.Point(19, 510);
             this.GB_PatientView.Name = "GB_PatientView";
-            this.GB_PatientView.Size = new System.Drawing.Size(664, 117);
-            this.GB_PatientView.TabIndex = 10;
+            this.GB_PatientView.Size = new System.Drawing.Size(664, 128);
+            this.GB_PatientView.TabIndex = 7;
             this.GB_PatientView.TabStop = false;
             this.GB_PatientView.Text = "Patient List View";
             // 
-            // dataGridView1
+            // LV_PatiView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(658, 98);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.LV_PatiView.FullRowSelect = true;
+            this.LV_PatiView.GridLines = true;
+            this.LV_PatiView.Location = new System.Drawing.Point(16, 16);
+            this.LV_PatiView.Name = "LV_PatiView";
+            this.LV_PatiView.Size = new System.Drawing.Size(632, 104);
+            this.LV_PatiView.TabIndex = 0;
+            this.LV_PatiView.UseCompatibleStateImageBehavior = false;
+            this.LV_PatiView.View = System.Windows.Forms.View.Details;
             // 
-            // Patientfrm
+            // frmInsertIntoCare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Controls.Add(this.GroupBox2);
-            this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.GrpBox_PatiInfo);
             this.Controls.Add(this.GB_PatientView);
-            this.Name = "Patientfrm";
-            this.Size = new System.Drawing.Size(696, 636);
-            this.GroupBox2.ResumeLayout(false);
-            this.GroupBox1.ResumeLayout(false);
+            this.Name = "frmInsertIntoCare";
+            this.Size = new System.Drawing.Size(702, 660);
+            this.GroupBox3.ResumeLayout(false);
             this.GrpBox_PatiInfo.ResumeLayout(false);
             this.GrpBox_PatiInfo.PerformLayout();
-            this.GroupBox3.ResumeLayout(false);
             this.GB_PatientView.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        internal System.Windows.Forms.GroupBox GroupBox2;
-        internal System.Windows.Forms.Button btnSearch;
-        internal System.Windows.Forms.Button btnExcel;
-        internal System.Windows.Forms.GroupBox GroupBox1;
-        internal System.Windows.Forms.Button btnCustomprint;
-        internal System.Windows.Forms.GroupBox GrpBox_PatiInfo;
         internal System.Windows.Forms.TextBox Rtxt_Remark;
         internal System.Windows.Forms.TextBox RtxtAddress;
         internal System.Windows.Forms.GroupBox GroupBox3;
         internal System.Windows.Forms.Button btnSaveRegistration;
         internal System.Windows.Forms.Button btnCancelRegistration;
-        internal System.Windows.Forms.Button btnEditRegistration;
-        internal System.Windows.Forms.Button btnRegisterPatient;
         internal System.Windows.Forms.Label Label13;
         internal System.Windows.Forms.TextBox txtBedCharge;
         internal System.Windows.Forms.DateTimePicker DTP_date;
         internal System.Windows.Forms.Label Label10;
         internal System.Windows.Forms.Label Label9;
+        internal System.Windows.Forms.GroupBox GrpBox_PatiInfo;
+        internal System.Windows.Forms.ComboBox cbDoctor;
         internal System.Windows.Forms.Label Label8;
         internal System.Windows.Forms.Label Label7;
         internal System.Windows.Forms.Label Label6;
@@ -522,13 +418,6 @@
         internal System.Windows.Forms.ComboBox CB_BedCategory;
         internal System.Windows.Forms.ComboBox CB_Bedno;
         internal System.Windows.Forms.GroupBox GB_PatientView;
-        private System.Windows.Forms.BindingSource doctorBindingSource;
-
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource admitBindingSource1;
-
-        private System.Windows.Forms.BindingSource hospitaldataDataSet3BindingSource;
-        internal System.Windows.Forms.ComboBox comboBox1;
-
+        internal System.Windows.Forms.ListView LV_PatiView;
     }
 }
