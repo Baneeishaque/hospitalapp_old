@@ -34,7 +34,6 @@
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCustomprint = new System.Windows.Forms.Button();
             this.GB_DoctorView = new System.Windows.Forms.GroupBox();
-            this.LV_SWView = new System.Windows.Forms.ListView();
             this.GB_Doctor = new System.Windows.Forms.GroupBox();
             this.RtxtAddress = new System.Windows.Forms.TextBox();
             this.GroupBox3 = new System.Windows.Forms.GroupBox();
@@ -54,11 +53,13 @@
             this.Label3 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.GroupBox2.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.GB_DoctorView.SuspendLayout();
             this.GB_Doctor.SuspendLayout();
             this.GroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupBox2
@@ -116,24 +117,13 @@
             // GB_DoctorView
             // 
             this.GB_DoctorView.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.GB_DoctorView.Controls.Add(this.LV_SWView);
+            this.GB_DoctorView.Controls.Add(this.dataGridView1);
             this.GB_DoctorView.Location = new System.Drawing.Point(20, 372);
             this.GB_DoctorView.Name = "GB_DoctorView";
             this.GB_DoctorView.Size = new System.Drawing.Size(656, 248);
             this.GB_DoctorView.TabIndex = 5;
             this.GB_DoctorView.TabStop = false;
             this.GB_DoctorView.Text = "Sister/Wardboy View";
-            // 
-            // LV_SWView
-            // 
-            this.LV_SWView.FullRowSelect = true;
-            this.LV_SWView.GridLines = true;
-            this.LV_SWView.Location = new System.Drawing.Point(24, 24);
-            this.LV_SWView.Name = "LV_SWView";
-            this.LV_SWView.Size = new System.Drawing.Size(608, 200);
-            this.LV_SWView.TabIndex = 0;
-            this.LV_SWView.UseCompatibleStateImageBehavior = false;
-            this.LV_SWView.View = System.Windows.Forms.View.Details;
             // 
             // GB_Doctor
             // 
@@ -225,6 +215,7 @@
             this.btnAddS_W.Size = new System.Drawing.Size(88, 23);
             this.btnAddS_W.TabIndex = 6;
             this.btnAddS_W.Text = "Add S/W";
+            this.btnAddS_W.Click += new System.EventHandler(this.btnAddS_W_Click);
             // 
             // CB_Category
             // 
@@ -322,6 +313,20 @@
             this.Label1.TabIndex = 15;
             this.Label1.Text = "ID";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(16, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(631, 223);
+            this.dataGridView1.TabIndex = 1;
+            // 
             // SisterWardboyfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,6 +344,7 @@
             this.GB_Doctor.ResumeLayout(false);
             this.GB_Doctor.PerformLayout();
             this.GroupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,7 +357,6 @@
         internal System.Windows.Forms.GroupBox GroupBox1;
         internal System.Windows.Forms.Button btnCustomprint;
         internal System.Windows.Forms.GroupBox GB_DoctorView;
-        internal System.Windows.Forms.ListView LV_SWView;
         internal System.Windows.Forms.GroupBox GB_Doctor;
         internal System.Windows.Forms.TextBox RtxtAddress;
         internal System.Windows.Forms.GroupBox GroupBox3;
@@ -371,5 +376,6 @@
         internal System.Windows.Forms.Label Label3;
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.Label Label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -165,6 +165,26 @@ public class DBhandler
         }
     }
 
+    public string get_max_reg_nurse()
+    {
+        con.Open();
+        SqlDataAdapter sda = new SqlDataAdapter("select MAX(id) AS Expr1 from nurse", con);
+
+        DataTable dt = new DataTable();
+        sda.Fill(dt);
+
+        close();
+
+        if (dt.Rows[0][0].ToString() == "")
+        {
+            return "1";
+        }
+        else
+        {
+            return (Convert.ToInt32(dt.Rows[0][0].ToString()) + 1).ToString();
+        }
+    }
+
     public string get_max_reg_op()
     {
         con.Open();
