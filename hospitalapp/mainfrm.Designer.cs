@@ -184,6 +184,7 @@
             this.button1.Size = new System.Drawing.Size(104, 32);
             this.button1.TabIndex = 8;
             this.button1.Text = "Booking";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnBill
             // 

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace hospitalapp
 {
@@ -13,6 +14,7 @@ namespace hospitalapp
     {
         DBhandler db = new DBhandler();
         String current_table_name;
+
         public Print_Contents(String table_name)
         {
             InitializeComponent();
@@ -73,6 +75,92 @@ namespace hospitalapp
             //MessageBox.Show(query);
             dataGridView1.DataSource = db.GetTable(query);
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Font boldFont = new Font(this.Font, FontStyle.Bold);
+            Graphics g = e.Graphics;
+
+            DrawDataGridView(boldFont, g);
+        }
+
+        private void DrawDataGridView(Font boldFont, Graphics g)
+        {
+
+            // Print the data and time
+            g.DrawString(current_table_name, this.Font, Brushes.Black, 0, 0);
+
+            // custom draws the grid from the data
+
+            int columnPosition = 0;
+            int rowPosition = 25;
+
+            // draw headers
+            DrawHeader(boldFont, g, ref columnPosition, ref rowPosition);
+
+            rowPosition += 65;
+
+            // draw each row
+            DrawGridBody(g, ref columnPosition, ref rowPosition);
+        }
+
+        private int DrawHeader(Font boldFont, Graphics g, ref int columnPosition, ref int rowPosition)
+        {
+            foreach (DataGridViewColumn dc in dataGridView1.Columns)
+            {
+                g.DrawString(dc.HeaderText, boldFont, Brushes.Black, (float)columnPosition, (float)rowPosition);
+                columnPosition += dc.Width + 5;
+            }
+            return columnPosition;
+        }
+
+        private void DrawGridBody(Graphics g, ref int columnPosition, ref int rowPosition)
+        {
+            
+            //MessageBox.Show(dataGridView1.Rows[0].Cells[0].Value.ToString());
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                columnPosition = 0;
+
+                // draw a line to separate the rows
+
+                g.DrawLine(Pens.Black, new Point(0, rowPosition), new Point(this.Width, rowPosition));
+
+                // loop through each column in the row, and
+                // draw the individual data item
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                {
+                    // just draw string in the column
+                    string text = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                    if (dataGridView1.Columns[j].DefaultCellStyle.Font != null)
+                    {
+                        g.DrawString(text, dataGridView1.Columns[j].DefaultCellStyle.Font, Brushes.Black, (float)columnPosition, (float)rowPosition + 20f);
+                    }
+                    else
+                    {
+                        g.DrawString(text, this.Font, Brushes.Black, (float)columnPosition, (float)rowPosition + 20f);
+                    }
+
+                    // go to the next column position
+                    columnPosition += dataGridView1.Columns[j].Width + 5;
+                }
+
+                // go to the next row position
+                rowPosition = rowPosition + 65;
+
+            }
+
+        }
+
 
     }
 }

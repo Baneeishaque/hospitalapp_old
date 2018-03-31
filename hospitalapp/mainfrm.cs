@@ -156,6 +156,18 @@ namespace hospitalapp
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Book b = new Book();
+            if (current_form != null)
+            {
+                pnlMain.Controls.Remove(current_form);
+            }
+            current_form = b;
+            pnlMain.Controls.Add(b);
+            b.BringToFront();
+        }
+
 
     }
 }

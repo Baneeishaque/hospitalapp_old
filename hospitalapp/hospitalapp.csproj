@@ -96,6 +96,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admit.Designer.cs">
+      <DependentUpon>Admit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bedfrm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,6 +113,12 @@
     </Compile>
     <Compile Include="Billfrm.Designer.cs">
       <DependentUpon>Billfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Book.Designer.cs">
+      <DependentUpon>Book.cs</DependentUpon>
     </Compile>
     <Compile Include="DBhandler.cs" />
     <Compile Include="DB_Constants.cs" />
@@ -160,12 +172,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admit.resx">
+      <DependentUpon>Admit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bedfrm.resx">
       <DependentUpon>Bedfrm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Billfrm.resx">
       <DependentUpon>Billfrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Book.resx">
+      <DependentUpon>Book.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dischargefrm.resx">
@@ -209,6 +229,10 @@
       <DependentUpon>Record Print.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SendMail.resx">
       <DependentUpon>SendMail.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -240,6 +264,12 @@
     </Compile>
     <Compile Include="Record Print.Designer.cs">
       <DependentUpon>Record Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
     </Compile>
     <Compile Include="SendMail.cs">
       <SubType>UserControl</SubType>

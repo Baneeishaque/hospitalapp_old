@@ -172,7 +172,7 @@ namespace hospitalapp
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            ExportToExcel();
+                ExportToExcel();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -215,6 +215,19 @@ namespace hospitalapp
             MessageBox.Show("Updation Success...");
             dataGridView1.DataSource = db.GetTable("SELECT Reg As [Reg. No.], name As Name, Age, Address, Phone, Doctor FROM op");
             this.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Admit f = new Admit(txtRegno.Text,txtPatiname.Text,txtAge.Text,RtxtAddress.Text,txtphone.Text,DTP_date.Text,DTP_time.Text,txtDisease.Text,CB_Bloodgp.Text,cbDoctor.Text,Rtxt_Remark.Text);
+            f.Show();
+            this.Dispose();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Search s = new Search("op");
+            s.Show();
         }
 
         
