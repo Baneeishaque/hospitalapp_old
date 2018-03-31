@@ -276,6 +276,7 @@
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlMain);
             this.Name = "mainfrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mainfrm";
             this.Load += new System.EventHandler(this.mainfrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SBP1_Status)).EndInit();

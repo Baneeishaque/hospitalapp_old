@@ -29,32 +29,23 @@
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.frmcheck_DG = new System.Windows.Forms.DataGrid();
             this.btnSelectall = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.frmcheck_DG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupBox1
             // 
-            this.GroupBox1.Controls.Add(this.frmcheck_DG);
+            this.GroupBox1.Controls.Add(this.dataGridView1);
             this.GroupBox1.Location = new System.Drawing.Point(3, 250);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(608, 264);
             this.GroupBox1.TabIndex = 13;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "View";
-            // 
-            // frmcheck_DG
-            // 
-            this.frmcheck_DG.DataMember = "";
-            this.frmcheck_DG.HeaderForeColor = System.Drawing.SystemColors.ControlText;
-            this.frmcheck_DG.Location = new System.Drawing.Point(20, 32);
-            this.frmcheck_DG.Name = "frmcheck_DG";
-            this.frmcheck_DG.Size = new System.Drawing.Size(568, 216);
-            this.frmcheck_DG.TabIndex = 3;
             // 
             // btnSelectall
             // 
@@ -65,6 +56,7 @@
             this.btnSelectall.Size = new System.Drawing.Size(104, 32);
             this.btnSelectall.TabIndex = 12;
             this.btnSelectall.Text = "Select All";
+            this.btnSelectall.Click += new System.EventHandler(this.btnSelectall_Click);
             // 
             // btnPrint
             // 
@@ -77,21 +69,30 @@
             this.btnPrint.TabIndex = 11;
             this.btnPrint.Text = "Print";
             // 
-            // listView1
+            // dataGridView1
             // 
-            this.listView1.CheckBoxes = true;
-            this.listView1.Location = new System.Drawing.Point(23, 33);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(257, 191);
-            this.listView1.TabIndex = 14;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(593, 245);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.CheckOnClick = true;
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(22, 26);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(272, 199);
+            this.checkedListBox1.TabIndex = 14;
+            this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_ItemCheck);
             // 
             // Print_Contents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 524);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.btnSelectall);
             this.Controls.Add(this.btnPrint);
@@ -101,7 +102,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Print Contents";
             this.GroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.frmcheck_DG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -109,9 +110,9 @@
         #endregion
 
         internal System.Windows.Forms.GroupBox GroupBox1;
-        internal System.Windows.Forms.DataGrid frmcheck_DG;
         internal System.Windows.Forms.Button btnSelectall;
         internal System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

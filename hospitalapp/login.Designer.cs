@@ -130,6 +130,7 @@
             this.Controls.Add(this.PictureBox1);
             this.Controls.Add(this.Label1);
             this.Name = "login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
