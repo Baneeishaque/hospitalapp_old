@@ -187,7 +187,35 @@ namespace hospitalapp
 
         private void btnCustomprint_Click(object sender, EventArgs e)
         {
+            Print_Contents cb = new Print_Contents("Admit");
+            cb.Show();
+        }
 
+        private void btnCancelRegistration_Click(object sender, EventArgs e)
+        {
+            btnEditRegistration.Enabled = false;
+            btnSaveRegistration.Enabled = false;
+            btnCancelRegistration.Enabled = false;
+            btnRegisterPatient.Enabled = true;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Search s = new Search("Admit");
+            s.Show();
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Documents (*.xls)|*.xls";
+            sfd.FileName = "export.xls";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                //ToCsV(dataGridView1, @"c:\export.xls");
+                Excel_Utils eutils = new Excel_Utils();
+                eutils.ToCsV(dataGridView1, sfd.FileName); // Here dataGridview1 is your grid view name
+            }
         }
 
     }

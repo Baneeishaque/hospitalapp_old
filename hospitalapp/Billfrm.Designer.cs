@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Billfrm));
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
@@ -57,6 +58,9 @@
             this.DTP_DOD = new System.Windows.Forms.TextBox();
             this.GB_PatientBillView = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.GroupBox2.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.GrpBox_Patibill.SuspendLayout();
@@ -84,6 +88,7 @@
             this.btnSearch.Size = new System.Drawing.Size(72, 32);
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnExcel
             // 
@@ -93,6 +98,7 @@
             this.btnExcel.Size = new System.Drawing.Size(72, 32);
             this.btnExcel.TabIndex = 6;
             this.btnExcel.Text = "Excel";
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // GroupBox1
             // 
@@ -114,6 +120,7 @@
             this.btnCustomprint.TabIndex = 4;
             this.btnCustomprint.Text = "List";
             this.btnCustomprint.UseVisualStyleBackColor = false;
+            this.btnCustomprint.Click += new System.EventHandler(this.btnCustomprint_Click);
             // 
             // GrpBox_Patibill
             // 
@@ -156,12 +163,14 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Enabled = false;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnDelete.Location = new System.Drawing.Point(24, 104);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(88, 32);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEditRegistration
             // 
@@ -346,6 +355,24 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // Billfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,7 +404,6 @@
         internal System.Windows.Forms.Button btnCustomprint;
         internal System.Windows.Forms.GroupBox GrpBox_Patibill;
         internal System.Windows.Forms.GroupBox GroupBox3;
-        internal System.Windows.Forms.Button btnDelete;
         internal System.Windows.Forms.Button btnEditRegistration;
         internal System.Windows.Forms.TextBox txtBedCategory;
         internal System.Windows.Forms.Label Label7;
@@ -399,5 +425,9 @@
         internal System.Windows.Forms.TextBox DTP_DOD;
         internal System.Windows.Forms.GroupBox GB_PatientBillView;
         private System.Windows.Forms.DataGridView dataGridView1;
+        internal System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

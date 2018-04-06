@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cbDoctor = new System.Windows.Forms.TextBox();
             this.CB_Bloodgp = new System.Windows.Forms.TextBox();
             this.DTP_date = new System.Windows.Forms.TextBox();
@@ -64,14 +66,12 @@
             this.GroupBox4 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.GroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.GroupBox1.SuspendLayout();
             this.GroupBox3.SuspendLayout();
             this.GroupBox5.SuspendLayout();
             this.GroupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupBox2
@@ -83,6 +83,23 @@
             this.GroupBox2.TabIndex = 12;
             this.GroupBox2.TabStop = false;
             this.GroupBox2.Text = "Patient List View";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(554, 85);
+            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // GroupBox1
             // 
@@ -122,6 +139,13 @@
             this.GroupBox1.TabIndex = 11;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Patient Detail";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(160, 472);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 159;
             // 
             // cbDoctor
             // 
@@ -383,6 +407,7 @@
             this.btnCustomprint.TabIndex = 16;
             this.btnCustomprint.Text = "List";
             this.btnCustomprint.UseVisualStyleBackColor = false;
+            this.btnCustomprint.Click += new System.EventHandler(this.btnCustomprint_Click);
             // 
             // GroupBox4
             // 
@@ -403,6 +428,7 @@
             this.btnSearch.Size = new System.Drawing.Size(75, 32);
             this.btnSearch.TabIndex = 17;
             this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnExcel
             // 
@@ -412,30 +438,7 @@
             this.btnExcel.Size = new System.Drawing.Size(75, 32);
             this.btnExcel.TabIndex = 18;
             this.btnExcel.Text = "Excel";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(554, 85);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(160, 472);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 159;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // Dischargefrm
             // 
@@ -449,12 +452,12 @@
             this.Name = "Dischargefrm";
             this.Size = new System.Drawing.Size(696, 632);
             this.GroupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             this.GroupBox3.ResumeLayout(false);
             this.GroupBox5.ResumeLayout(false);
             this.GroupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

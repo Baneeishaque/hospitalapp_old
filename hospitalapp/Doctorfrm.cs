@@ -80,7 +80,62 @@ namespace hospitalapp
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //txtID.Text = e.RowIndex;
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                txtID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                RtxtAddress.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtPhone.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                DTP_DOJ.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
+                
+                btnDeleteDoctor.Enabled = true;
+                btnUpdateDoctor.Enabled = true;
+                btnAddDoctor.Enabled = false;
+                btnSaveDoctor.Enabled = false;
+                btnCancel.Enabled = false;
+            }
+        }
+
+        private void btnCustomprint_Click(object sender, EventArgs e)
+        {
+            Print_Contents cb = new Print_Contents("Doctor");
+            cb.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Search s = new Search("Admit");
+            s.Show();
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Documents (*.xls)|*.xls";
+            sfd.FileName = "export.xls";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                //ToCsV(dataGridView1, @"c:\export.xls");
+                Excel_Utils eutils = new Excel_Utils();
+                eutils.ToCsV(dataGridView1, sfd.FileName); // Here dataGridview1 is your grid view name
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            btnSaveDoctor.Enabled = false;
+            btnAddDoctor.Enabled = true;
+            btnCancel.Enabled = false;
+        }
+
+        private void btnUpdateDoctor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteDoctor_Click(object sender, EventArgs e)
+        {
+
         }
 
 

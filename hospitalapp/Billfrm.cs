@@ -57,5 +57,119 @@ namespace hospitalapp
             MessageBox.Show("Billing Success...");
             this.Dispose();
         }
+
+        private void btnCustomprint_Click(object sender, EventArgs e)
+        {
+            Print_Contents cb = new Print_Contents("Bill");
+            cb.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Search s = new Search("Bill");
+            s.Show();
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Documents (*.xls)|*.xls";
+            sfd.FileName = "export.xls";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                //ToCsV(dataGridView1, @"c:\export.xls");
+                Excel_Utils eutils = new Excel_Utils();
+                eutils.ToCsV(dataGridView1, sfd.FileName); // Here dataGridview1 is your grid view name
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Font boldFont = new Font(this.Font, FontStyle.Bold);
+            Graphics g = e.Graphics;
+
+            DrawDataGridView(boldFont, g);
+        }
+
+        private void DrawDataGridView(Font boldFont, Graphics g)
+        {
+
+            // Print the data and time
+            g.DrawString("Bill", this.Font, Brushes.Black, 0, 0);
+
+            // custom draws the grid from the data
+
+            int columnPosition = 0;
+            int rowPosition = 25;
+
+            // draw headers
+            //DrawHeader(boldFont, g, ref columnPosition, ref rowPosition);
+
+            rowPosition += 65;
+
+            // draw each row
+            DrawGridBody(g, ref columnPosition, ref rowPosition);
+        }
+
+        //private int DrawHeader(Font boldFont, Graphics g, ref int columnPosition, ref int rowPosition)
+        //{
+        //    foreach (DataGridViewColumn dc in dataGridView1.Columns)
+        //    {
+        //        g.DrawString(dc.HeaderText, boldFont, Brushes.Black, (float)columnPosition, (float)rowPosition);
+        //        columnPosition += dc.Width + 5;
+        //    }
+        //    return columnPosition;
+        //}
+
+        private void DrawGridBody(Graphics g, ref int columnPosition, ref int rowPosition)
+        {
+
+            //MessageBox.Show(dataGridView1.Rows[0].Cells[0].Value.ToString());
+
+            g.DrawString(text, this.Font, Brushes.Black, (float)columnPosition, (float)rowPosition + 20f);
+            rowPosition = rowPosition + 65;
+
+            //for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            //{
+            //    columnPosition = 0;
+
+            //    // draw a line to separate the rows
+
+            //    g.DrawLine(Pens.Black, new Point(0, rowPosition), new Point(this.Width, rowPosition));
+
+            //    // loop through each column in the row, and
+            //    // draw the individual data item
+            //    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+            //    {
+            //        // just draw string in the column
+            //        string text = dataGridView1.Rows[i].Cells[j].Value.ToString();
+            //        if (dataGridView1.Columns[j].DefaultCellStyle.Font != null)
+            //        {
+            //            g.DrawString(text, dataGridView1.Columns[j].DefaultCellStyle.Font, Brushes.Black, (float)columnPosition, (float)rowPosition + 20f);
+            //        }
+            //        else
+            //        {
+            //            g.DrawString(text, this.Font, Brushes.Black, (float)columnPosition, (float)rowPosition + 20f);
+            //        }
+
+            //        // go to the next column position
+            //        columnPosition += dataGridView1.Columns[j].Width + 5;
+            //    }
+
+            //    // go to the next row position
+            //    rowPosition = rowPosition + 65;
+
+            //}
+
+        }
+
+       
+
+        
     }
 }

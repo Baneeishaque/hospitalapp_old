@@ -15,7 +15,7 @@ namespace hospitalapp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainfrm());
+            Application.Run(new login());
         }
     }
 }

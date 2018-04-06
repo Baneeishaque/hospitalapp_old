@@ -94,6 +94,7 @@
             this.btnSearch.Size = new System.Drawing.Size(75, 32);
             this.btnSearch.TabIndex = 20;
             this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnExcel
             // 
@@ -103,6 +104,7 @@
             this.btnExcel.Size = new System.Drawing.Size(75, 32);
             this.btnExcel.TabIndex = 21;
             this.btnExcel.Text = "Excel";
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // GroupBox1
             // 
@@ -223,6 +225,7 @@
             this.btnCancelRegistration.Size = new System.Drawing.Size(112, 32);
             this.btnCancelRegistration.TabIndex = 17;
             this.btnCancelRegistration.Text = "Cancel  Registration";
+            this.btnCancelRegistration.Click += new System.EventHandler(this.btnCancelRegistration_Click);
             // 
             // btnEditRegistration
             // 

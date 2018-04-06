@@ -36,6 +36,7 @@
             this.Rtxt_Remark = new System.Windows.Forms.TextBox();
             this.RtxtAddress = new System.Windows.Forms.TextBox();
             this.GroupBox3 = new System.Windows.Forms.GroupBox();
+            this.button_admit = new System.Windows.Forms.Button();
             this.btnDeleteRegistration = new System.Windows.Forms.Button();
             this.btnRegisterPatient = new System.Windows.Forms.Button();
             this.btnSaveRegistration = new System.Windows.Forms.Button();
@@ -64,8 +65,6 @@
             this.GB_PatientView = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.button1 = new System.Windows.Forms.Button();
             this.GrpBox_PatiInfo.SuspendLayout();
             this.GroupBox3.SuspendLayout();
             this.GroupBox1.SuspendLayout();
@@ -161,7 +160,7 @@
             // 
             // GroupBox3
             // 
-            this.GroupBox3.Controls.Add(this.button1);
+            this.GroupBox3.Controls.Add(this.button_admit);
             this.GroupBox3.Controls.Add(this.btnDeleteRegistration);
             this.GroupBox3.Controls.Add(this.btnRegisterPatient);
             this.GroupBox3.Controls.Add(this.btnSaveRegistration);
@@ -173,6 +172,16 @@
             this.GroupBox3.TabIndex = 64;
             this.GroupBox3.TabStop = false;
             this.GroupBox3.Text = "Transaction";
+            // 
+            // button_admit
+            // 
+            this.button_admit.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button_admit.Location = new System.Drawing.Point(32, 272);
+            this.button_admit.Name = "button_admit";
+            this.button_admit.Size = new System.Drawing.Size(112, 32);
+            this.button_admit.TabIndex = 16;
+            this.button_admit.Text = "Admit";
+            this.button_admit.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnDeleteRegistration
             // 
@@ -423,6 +432,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(650, 150);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellBorderStyleChanged += new System.EventHandler(this.dataGridView1_CellBorderStyleChanged);
             // 
             // GroupBox2
             // 
@@ -434,16 +444,6 @@
             this.GroupBox2.TabIndex = 11;
             this.GroupBox2.TabStop = false;
             this.GroupBox2.Text = "Search/Export";
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Location = new System.Drawing.Point(32, 272);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 32);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Admit";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // opfrm
             // 
@@ -513,8 +513,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bloodgroupDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn doctorDataGridViewTextBoxColumn;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        internal System.Windows.Forms.Button button1;
+        internal System.Windows.Forms.Button button_admit;
 
     }
 }

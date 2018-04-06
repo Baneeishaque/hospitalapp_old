@@ -52,5 +52,30 @@ namespace hospitalapp
             MessageBox.Show("Discharge Success...");
             this.Dispose();
         }
+
+        private void btnCustomprint_Click(object sender, EventArgs e)
+        {
+            Print_Contents cb = new Print_Contents("Discharge");
+            cb.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Search s = new Search("Discharge");
+            s.Show();
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Documents (*.xls)|*.xls";
+            sfd.FileName = "export.xls";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                //ToCsV(dataGridView1, @"c:\export.xls");
+                Excel_Utils eutils = new Excel_Utils();
+                eutils.ToCsV(dataGridView1, sfd.FileName); // Here dataGridview1 is your grid view name
+            }
+        }
     }
 }

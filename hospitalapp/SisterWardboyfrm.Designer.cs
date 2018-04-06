@@ -34,6 +34,7 @@
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCustomprint = new System.Windows.Forms.Button();
             this.GB_DoctorView = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.GB_Doctor = new System.Windows.Forms.GroupBox();
             this.RtxtAddress = new System.Windows.Forms.TextBox();
             this.GroupBox3 = new System.Windows.Forms.GroupBox();
@@ -53,13 +54,12 @@
             this.Label3 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.GroupBox2.SuspendLayout();
             this.GroupBox1.SuspendLayout();
             this.GB_DoctorView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.GB_Doctor.SuspendLayout();
             this.GroupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupBox2
@@ -82,6 +82,7 @@
             this.btnSearch.Size = new System.Drawing.Size(72, 23);
             this.btnSearch.TabIndex = 12;
             this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnExcel
             // 
@@ -91,6 +92,7 @@
             this.btnExcel.Size = new System.Drawing.Size(72, 23);
             this.btnExcel.TabIndex = 13;
             this.btnExcel.Text = "Excel";
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // GroupBox1
             // 
@@ -113,6 +115,7 @@
             this.btnCustomprint.TabIndex = 11;
             this.btnCustomprint.Text = "List";
             this.btnCustomprint.UseVisualStyleBackColor = false;
+            this.btnCustomprint.Click += new System.EventHandler(this.btnCustomprint_Click);
             // 
             // GB_DoctorView
             // 
@@ -124,6 +127,20 @@
             this.GB_DoctorView.TabIndex = 5;
             this.GB_DoctorView.TabStop = false;
             this.GB_DoctorView.Text = "Sister/Wardboy View";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(16, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(631, 223);
+            this.dataGridView1.TabIndex = 1;
             // 
             // GB_Doctor
             // 
@@ -188,6 +205,7 @@
             this.btnSaveS_W.Size = new System.Drawing.Size(88, 23);
             this.btnSaveS_W.TabIndex = 9;
             this.btnSaveS_W.Text = "Save S/W";
+            this.btnSaveS_W.Click += new System.EventHandler(this.btnSaveS_W_Click);
             // 
             // btnDeleteS_W
             // 
@@ -197,6 +215,7 @@
             this.btnDeleteS_W.Size = new System.Drawing.Size(88, 23);
             this.btnDeleteS_W.TabIndex = 8;
             this.btnDeleteS_W.Text = "Delete S/W";
+            this.btnDeleteS_W.Click += new System.EventHandler(this.btnDeleteS_W_Click);
             // 
             // btnUpdateS_W
             // 
@@ -206,6 +225,7 @@
             this.btnUpdateS_W.Size = new System.Drawing.Size(88, 23);
             this.btnUpdateS_W.TabIndex = 7;
             this.btnUpdateS_W.Text = "Edit S/W";
+            this.btnUpdateS_W.Click += new System.EventHandler(this.btnUpdateS_W_Click);
             // 
             // btnAddS_W
             // 
@@ -313,20 +333,6 @@
             this.Label1.TabIndex = 15;
             this.Label1.Text = "ID";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(631, 223);
-            this.dataGridView1.TabIndex = 1;
-            // 
             // SisterWardboyfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,10 +347,10 @@
             this.GroupBox2.ResumeLayout(false);
             this.GroupBox1.ResumeLayout(false);
             this.GB_DoctorView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.GB_Doctor.ResumeLayout(false);
             this.GB_Doctor.PerformLayout();
             this.GroupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

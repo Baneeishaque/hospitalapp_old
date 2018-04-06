@@ -19,7 +19,21 @@ namespace hospitalapp
         {
             InitializeComponent();
             current_table_name = table_name;
-            DataTable dt = db.GetTable("SELECT " + table_name + ".* FROM " + table_name + "");
+
+            DataTable dt;
+            if (current_table_name == "Discharge")
+            {
+                dt = db.GetTable("SELECT * FROM Admit WHERE (discharge_date IS NULL)");
+            }
+            else if (current_table_name == "Bill")
+            {
+                dt = db.GetTable("SELECT * FROM Admit WHERE (discharge_date IS NOT NULL) AND (bill_status IS NULL)");
+            }
+            else
+            {
+                dt = db.GetTable("SELECT " + table_name + ".* FROM " + table_name + "");
+            }
+
             for (int i = 0; i < dt.Columns.Count; i++)
             {
                 checkedListBox1.Items.Add(dt.Columns[i].Caption);
@@ -71,7 +85,20 @@ namespace hospitalapp
                 }
 
             }
-            query = query + " FROM " + current_table_name;
+            
+
+            if (current_table_name == "Discharge")
+            {
+                query = query + " FROM Admit WHERE (discharge_date IS NULL)";
+            }
+            else if (current_table_name == "Bill")
+            {
+                query = query + " FROM Admit WHERE (discharge_date IS NOT NULL) AND (bill_status IS NULL)";
+            }
+            else
+            {
+                query = query + " FROM " + current_table_name;
+            }
             //MessageBox.Show(query);
             dataGridView1.DataSource = db.GetTable(query);
         }
@@ -124,7 +151,7 @@ namespace hospitalapp
 
         private void DrawGridBody(Graphics g, ref int columnPosition, ref int rowPosition)
         {
-            
+
             //MessageBox.Show(dataGridView1.Rows[0].Cells[0].Value.ToString());
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)

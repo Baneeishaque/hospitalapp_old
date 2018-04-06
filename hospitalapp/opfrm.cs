@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace hospitalapp
 {
@@ -20,7 +21,8 @@ namespace hospitalapp
             btnDeleteRegistration.Enabled = false;
             btnCancelRegistration.Enabled = false;
             btnSaveRegistration.Enabled = false;
-           
+            button_admit.Enabled = false;
+
 
             txtRegno.Text = db.get_max_reg_op();
 
@@ -47,7 +49,7 @@ namespace hospitalapp
         {
             if (txtPatiname.Text.Length == 0)
                 MessageBox.Show("enter all field");
-            else if(txtAge.Text.Length==0)
+            else if (txtAge.Text.Length == 0)
                 MessageBox.Show("enter all field");
             else if (RtxtAddress.Text.Length == 0)
                 MessageBox.Show("enter all field");
@@ -80,7 +82,7 @@ namespace hospitalapp
                 dataGridView1.DataSource = db.GetTable("SELECT Reg As [Reg. No.], name As Name, Age, Address, Phone, Doctor FROM op");
                 this.Dispose();
             }
-     
+
 
         }
 
@@ -94,86 +96,24 @@ namespace hospitalapp
 
         private void btnCustomprint_Click(object sender, EventArgs e)
         {
-            //printDocument1.Print();
             Print_Contents cb = new Print_Contents("op");
             cb.Show();
         }
 
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            Bitmap bm = new Bitmap(this.dataGridView1.Width, this.dataGridView1.Height);
-            dataGridView1.DrawToBitmap(bm, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
-            e.Graphics.DrawImage(bm, 0, 0);
-        }
-
-        /// <summary> 
-        /// Exports the datagridview values to Excel. 
-        /// </summary> 
-        private void ExportToExcel()
-        {
-            // Creating a Excel object. 
-            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
-            Microsoft.Office.Interop.Excel.Worksheet worksheet = null;
-
-            try
-            {
-
-                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
-
-                worksheet.Name = "ExportedFromDatGrid";
-
-                int cellRowIndex = 1;
-                int cellColumnIndex = 1;
-
-                //Loop through each row and read value from each column. 
-                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-                {
-                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
-                    {
-                        // Excel index starts from 1,1. As first Row would have the Column headers, adding a condition check. 
-                        if (cellRowIndex == 1)
-                        {
-                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dataGridView1.Columns[j].HeaderText;
-                        }
-                        else
-                        {
-                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dataGridView1.Rows[i].Cells[j].Value.ToString();
-                        }
-                        cellColumnIndex++;
-                    }
-                    cellColumnIndex = 1;
-                    cellRowIndex++;
-                }
-
-                //Getting the location and file name of the excel to save from user. 
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-                saveDialog.FilterIndex = 2;
-
-                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    workbook.SaveCopyAs(saveDialog.FileName);
-                    MessageBox.Show("Export Successful");
-                }
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                excel.Quit();
-                workbook = null;
-                excel = null;
-            }
-
-        }
-
         private void btnExcel_Click(object sender, EventArgs e)
         {
-                ExportToExcel();
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Documents (*.xls)|*.xls";
+            sfd.FileName = "export.xls";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                //ToCsV(dataGridView1, @"c:\export.xls");
+                Excel_Utils eutils = new Excel_Utils();
+                eutils.ToCsV(dataGridView1, sfd.FileName); // Here dataGridview1 is your grid view name
+            }
         }
+
+        
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -197,7 +137,8 @@ namespace hospitalapp
                 btnEditRegistration.Enabled = true;
                 btnRegisterPatient.Enabled = false;
                 btnSaveRegistration.Enabled = false;
-                
+                button_admit.Enabled = true;
+                btnCancelRegistration.Enabled = false;
             }
         }
 
@@ -211,7 +152,7 @@ namespace hospitalapp
 
         private void btnEditRegistration_Click(object sender, EventArgs e)
         {
-            db.Ins_Up_Del("UPDATE op SET name ='" + txtPatiname.Text + "', Age ='" + txtAge.Text + "', Address ='" + RtxtAddress.Text + "', Phone ='" + txtphone.Text + "', Date ='" + DTP_date.Value + "', Time ='" + DTP_time.Value + "', Disease ='" + txtDisease.Text + "', Bloodgroup ='" + CB_Bloodgp.SelectedItem.ToString() + "', Doctor ='" + cbDoctor.SelectedValue + "', Remarks ='" +Rtxt_Remark.Text + "'  WHERE Reg=" + txtRegno.Text);
+            db.Ins_Up_Del("UPDATE op SET name ='" + txtPatiname.Text + "', Age ='" + txtAge.Text + "', Address ='" + RtxtAddress.Text + "', Phone ='" + txtphone.Text + "', Date ='" + DTP_date.Value + "', Time ='" + DTP_time.Value + "', Disease ='" + txtDisease.Text + "', Bloodgroup ='" + CB_Bloodgp.SelectedItem.ToString() + "', Doctor ='" + cbDoctor.SelectedValue + "', Remarks ='" + Rtxt_Remark.Text + "'  WHERE Reg=" + txtRegno.Text);
             MessageBox.Show("Updation Success...");
             dataGridView1.DataSource = db.GetTable("SELECT Reg As [Reg. No.], name As Name, Age, Address, Phone, Doctor FROM op");
             this.Dispose();
@@ -219,8 +160,8 @@ namespace hospitalapp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Admit f = new Admit(txtRegno.Text,txtPatiname.Text,txtAge.Text,RtxtAddress.Text,txtphone.Text,DTP_date.Text,DTP_time.Text,txtDisease.Text,CB_Bloodgp.Text,cbDoctor.Text,Rtxt_Remark.Text);
-            f.Show();
+            Admit f = new Admit(txtRegno.Text, txtPatiname.Text, txtAge.Text, RtxtAddress.Text, txtphone.Text, DTP_date.Text, DTP_time.Text, txtDisease.Text, CB_Bloodgp.Text, cbDoctor.Text, Rtxt_Remark.Text);
+            f.ShowDialog();
             this.Dispose();
         }
 
@@ -230,6 +171,11 @@ namespace hospitalapp
             s.Show();
         }
 
-        
+        private void dataGridView1_CellBorderStyleChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

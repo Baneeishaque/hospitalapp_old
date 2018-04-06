@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
@@ -80,6 +80,7 @@
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 11;
             this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnExcel
             // 
@@ -89,6 +90,7 @@
             this.btnExcel.Size = new System.Drawing.Size(75, 23);
             this.btnExcel.TabIndex = 12;
             this.btnExcel.Text = "Excel";
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // GroupBox1
             // 
@@ -110,6 +112,7 @@
             this.btnCustomprint.TabIndex = 10;
             this.btnCustomprint.Text = "List";
             this.btnCustomprint.UseVisualStyleBackColor = false;
+            this.btnCustomprint.Click += new System.EventHandler(this.btnCustomprint_Click);
             // 
             // GB_DoctorView
             // 
@@ -132,14 +135,14 @@
             this.dataGridView1.Location = new System.Drawing.Point(15, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(625, 219);
             this.dataGridView1.TabIndex = 0;
@@ -187,6 +190,7 @@
             this.btnCancel.Size = new System.Drawing.Size(88, 23);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSaveDoctor
             // 
@@ -206,6 +210,7 @@
             this.btnDeleteDoctor.Size = new System.Drawing.Size(88, 23);
             this.btnDeleteDoctor.TabIndex = 7;
             this.btnDeleteDoctor.Text = "Delete Doctor";
+            this.btnDeleteDoctor.Click += new System.EventHandler(this.btnDeleteDoctor_Click);
             // 
             // btnUpdateDoctor
             // 
@@ -215,6 +220,7 @@
             this.btnUpdateDoctor.Size = new System.Drawing.Size(88, 23);
             this.btnUpdateDoctor.TabIndex = 6;
             this.btnUpdateDoctor.Text = "Edit Doctor";
+            this.btnUpdateDoctor.Click += new System.EventHandler(this.btnUpdateDoctor_Click);
             // 
             // btnAddDoctor
             // 
