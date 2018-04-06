@@ -131,7 +131,7 @@ namespace hospitalapp
 
             //MessageBox.Show(dataGridView1.Rows[0].Cells[0].Value.ToString());
 
-            g.DrawString(text, this.Font, Brushes.Black, (float)columnPosition, (float)rowPosition + 20f);
+            //g.DrawString(text, this.Font, Brushes.Black, (float)columnPosition, (float)rowPosition + 20f);
             rowPosition = rowPosition + 65;
 
             //for (int i = 0; i < dataGridView1.Rows.Count; i++)
